@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Starter Template - Materialize</title>
+
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+	<!-- JavaScript -->
+	<script src="../js/ui_methods.js"></script>
+</head>
+<body>
+	<nav class="light-blue lighten-1" role="navigation">
+		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">Damage Calculator</a></li>
+				<li><a href="#">Stat Comparison</a></li>
+			</ul>
+
+			<ul id="nav-mobile" class="side-nav">
+				<li><a href="#">Damage Calculator</a></li>
+				<li><a href="#">Stat Comparison</a></li>
+			</ul>
+			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+		</div>
+	</nav>
+	<div class="section no-pad-bot" id="index-banner">
+		<div class="container">
+			<br><br>
+			<h1 class="header center orange-text">Pokemon Damage Calculator</h1>
+			<div class="row center">
+				<a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+			</div>
+			<br><br>
+
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="section">
+
+			<!--   Icon Section   -->
+			<div class="row">
+				<form class ="col s12">
+					<div class="row">
+						<div class="input-field col s6">
+							<input placeholder="Bulbasaur" id="attacker" type="text" class="validate">
+							<label for="attacker">Attacking Pokemon</label>
+						</div>
+						<div class="input-field col s6">
+							<input placeholder="Bulbasaur" id="defender" type="text" class="validate">
+							<label for="defender">Defending Pokemon</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s6">
+							<select>
+								<option value="1">Hardy</option>
+								<option value="2">Lonely</option>
+								<option value="3">Brave</option>
+								<option value="4">Adamant</option>
+								<option value="5">Naughty</option>
+								<option value="6">Bold</option>
+								<option value="7">Docile</option>
+								<option value="8">Relaxed</option>
+								<option value="9">Impish</option>
+								<option value="10">Lax</option>
+								<option value="11">Timid</option>
+								<option value="12">Hasty</option>
+								<option value="13">Serious</option>
+								<option value="14">Jolly</option>
+								<option value="15">Naive</option>
+								<option value="16">Modest</option>
+								<option value="17">Mild</option>
+								<option value="18">Quiet</option>
+								<option value="19">Bashful</option>
+								<option value="20">Rash</option>
+								<option value="21">Calm</option>
+								<option value="22">Gentle</option>
+								<option value="23">Sassy</option>
+								<option value="24">Careful</option>
+								<option value="25">Quirky</option>
+							</select>
+							<label>Select Nature</label>
+						</div>
+						<div class="input-field col s6">
+							<select>
+								<option value="0">Unknown</option>
+								<option value="1">Hardy</option>
+								<option value="2">Lonely</option>
+								<option value="3">Brave</option>
+								<option value="4">Adamant</option>
+								<option value="5">Naughty</option>
+								<option value="6">Bold</option>
+								<option value="7">Docile</option>
+								<option value="8">Relaxed</option>
+								<option value="9">Impish</option>
+								<option value="10">Lax</option>
+								<option value="11">Timid</option>
+								<option value="12">Hasty</option>
+								<option value="13">Serious</option>
+								<option value="14">Jolly</option>
+								<option value="15">Naive</option>
+								<option value="16">Modest</option>
+								<option value="17">Mild</option>
+								<option value="18">Quiet</option>
+								<option value="19">Bashful</option>
+								<option value="20">Rash</option>
+								<option value="21">Calm</option>
+								<option value="22">Gentle</option>
+								<option value="23">Sassy</option>
+								<option value="24">Careful</option>
+								<option value="25">Quirky</option>
+							</select>
+							<label>Select Nature</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s6">
+							<label>Select Level</label>
+							<input id="attacker-level" value="50" type="number" min="1" max="100"class="validate">
+							<form action="#">
+								<p class="range-field">
+									<input type="range" id="attacker-level-slider" min="1" max="100" oninput="updateTextInput(true, this.value);" />
+								</p>
+							</form>
+						</div>
+						<div class="input-field col s6">
+							<label>Select Level</label>
+							<input id="defender-level" value="50" type="number" min="1" max="100"class="validate">
+							<form action="#">
+								<p class="range-field">
+									<input type="range" id="defender-level-slider" min="1" max="100" oninput="updateTextInput(false, this.value);" />
+								</p>
+							</form>
+						</div>
+					</div>
+
+					<div class="row">
+					</div>		
+				</form>
+			</div>
+		</div>
+		<br><br>
+
+		<div class="section">
+
+		</div>
+	</div>
+
+	<footer class="page-footer orange">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Company Bio</h5>
+					<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+				</div>
+				<div class="col l3 s12">
+					<h5 class="white-text">Settings</h5>
+					<ul>
+						<li><a class="white-text" href="#!">Link 1</a></li>
+						<li><a class="white-text" href="#!">Link 2</a></li>
+						<li><a class="white-text" href="#!">Link 3</a></li>
+						<li><a class="white-text" href="#!">Link 4</a></li>
+					</ul>
+				</div>
+				<div class="col l3 s12">
+					<h5 class="white-text">Connect</h5>
+					<ul>
+						<li><a class="white-text" href="#!">Link 1</a></li>
+						<li><a class="white-text" href="#!">Link 2</a></li>
+						<li><a class="white-text" href="#!">Link 3</a></li>
+						<li><a class="white-text" href="#!">Link 4</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<!--  Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="../js/materialize.js"></script>
+	<script src="../js/init.js"></script>
+
+</body>
+</html>
