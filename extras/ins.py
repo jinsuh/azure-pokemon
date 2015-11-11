@@ -1,8 +1,10 @@
 import pymssql
 conn = pymssql.connect(server="pokestats.database.windows.net", user="PokeAdmin@pokestats", password="P0k3m0ns", database="PokeStatsDB")
 cursor = conn.cursor()
-cursor.execute("INSERT INTO pokeTABLE (Id, name, type1, type2, HP, ATK, DEF, SpA, SpD, Speed) VALUES ('1', 'Bulbasaur', 'Grass', 'Poison', 45, 49, 49, 65, 65, 45)")
-cursor.execute("INSERT INTO pokeTABLE (Id, name, type1, type2, HP, ATK, DEF, SpA, SpD, Speed) VALUES ('2', 'Ivysaur', 'Grass', 'Poison', 60, 62, 63, 80, 80, 60)")
+name = 'Bulbasaur'
+cursor.execute("INSERT INTO pokeTABLE VALUES (%s, %s, %s, %s, %d, %d, %d, %d, %d, %d)", ('1a', name, 'Grass', 'Poison', 45, 49, 49, 65, 65, 45))
+name = 'Ivysaur'
+cursor.execute("INSERT INTO pokeTABLE VALUES (%s, %s, %s, %s, %d, %d, %d, %d, %d, %d)", ('2', name, 'Grass', 'Poison', 45, 49, 49, 65, 65, 9000))
 conn.commit()
 
 cursor.execute("SELECT * FROM pokeTABLE")

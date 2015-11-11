@@ -17,9 +17,9 @@ def addToName(name, mega_name):
 page = requests.get('http://pokemondb.net/pokedex/all')
 page = BeautifulSoup(page.text, "lxml")
 
-#db connection
-#conn = pymssql.connect(server="pokestats.database.windows.net", user="PokeAdmin@pokestats", password="P0k3m0ns", database="PokeStatsDB")
-#cursor = conn.cursor()
+# db connection
+conn = pymssql.connect(server="pokestats.database.windows.net", user="PokeAdmin@pokestats", password="P0k3m0ns", database="PokeStatsDB")
+cursor = conn.cursor()
 
 pokemonList = page.find('div', attrs={'class', 'colset'}).div.tbody.find_all('tr')
 
@@ -67,8 +67,7 @@ for pokemon in pokemonList:
 		count += 1
 	name = addToName(name, altName)
 	print numID, name, type1, type2, HP, ATK, DEF, SpA, SpD, Speed
-		# print field.text.strip()
-	# print numID
-	#cursor.execute("INSERT INTO pokeTABLE (Id, name, type1, type2, HP, ATK, DEF, SpA, SpD, Speed) VALUES (" + numID + ", " + name + ", '', 'Poison', 45, 49, 49, 65, 65, 45)")
-	#conn.commit()
+	cursor.execute("INSERT INTO pokeTABLE VALUES (%s, %s, %s, %s, %d, %d, %d, %d, %d, %d)", (numID, name, type1, type2, HP, ATK, DEF, SpA, SpD, Speed))
+	
 	#print numID + ", " + name + ", " + hp + ", " + attack + ", " + defend + ", " + spa + ", " + spd + ", " + speed
+conn.commit()
